@@ -33,13 +33,16 @@
  /**'/id' es para mandar el id del ususario que queremos actualizar */
  router.put( '/:id',
      [
-        
+        validarJWT,
+        check('nombre', 'El nombre del medico es obligatorio').not().isEmpty(),
+        check('hospital', 'El hospital id debe ser valido').isMongoId(), // Esto es para validar el id del hospital
+        validarCampos
      ], 
      actualizarMedico 
  );
  
  router.delete( '/:id',
-     
+     validarJWT,
      borrarMedico 
  );
  
