@@ -85,7 +85,7 @@ const validarADMIN_ROLE_o_MismoUsuario = async( req, res, next ) => {
             });
         }
 
-        if ( usuarioDB.role === 'ADMIN_ROLE' && uid === id ) {
+        if ( usuarioDB.role === 'ADMIN_ROLE' || uid === id ) {
 
             next();
         } else {

@@ -176,7 +176,7 @@ const borrarUsuario = async(req, res = response) => {
             });
         }
 
-        await Usuario.findOneAndDelete( uid );
+        await Usuario.findByIdAndDelete( uid );
 
         res.json({
             ok: true,

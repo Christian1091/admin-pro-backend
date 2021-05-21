@@ -7,7 +7,7 @@ const generarJWT = ( uid ) => {
         const payload = {
             uid,
         };
-    
+        /**Crear el JWT */
         jwt.sign(payload, process.env.JWT_SECRET, {
             expiresIn: '12h'
         }, ( err, token ) => {

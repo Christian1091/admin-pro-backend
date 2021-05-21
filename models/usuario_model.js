@@ -36,6 +36,7 @@ const UsuarioSchema = Schema ({
 
 /**Aqui quito el atributo password del json para que no muestre */
 UsuarioSchema.method('toJSON', function() {
+    /**Aqui extraemos la version, el id, el pass y todo el resto del objeto*/
     const { __V, _id, password, ...object} = this.toObject();
     object.uid = _id;
     return object;
